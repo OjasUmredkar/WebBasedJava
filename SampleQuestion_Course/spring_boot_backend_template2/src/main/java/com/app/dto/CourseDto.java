@@ -23,6 +23,8 @@ import lombok.ToString;
 public class CourseDto {
 	
 	
+	@NotNull(message = "Enter the Id")
+	private Long id;
 	@NotNull(message="Enter the name of course")
 	private String name;
 	@NotNull(message = "Enter the category of course")

@@ -30,7 +30,7 @@ public class CourseController {
 		
 	}
 	
-	@PutMapping("/{courseId}")
+	@PutMapping
 	public ResponseEntity<?> updateCourse(@Valid @RequestBody CourseDto courseDto ){
 		
 		return ResponseEntity.status(HttpStatus.OK).body(courseServ.updateTheCourse(courseDto));
