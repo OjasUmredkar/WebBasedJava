@@ -26,9 +26,9 @@ import lombok.ToString;
 @ToString
 public class Course extends BaseEntity {
 
-	@Column(name = "name",  unique = true)
+	@Column(name = "name",  unique = true,length = 30)
 	private String name;
-	@Column
+	@Column(length = 20)
 	@Enumerated(EnumType.STRING)
 	private Category category;
 	@Column(name = "start_date")
