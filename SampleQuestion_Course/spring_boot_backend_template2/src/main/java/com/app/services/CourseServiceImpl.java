@@ -1,5 +1,7 @@
 package com.app.services;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.modelmapper.ModelMapper;
@@ -9,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.app.custom_exception.CourseCustomException;
 import com.app.dto.CourseDto;
+import com.app.entities.Category;
 import com.app.entities.Course;
 import com.app.repositories.CourseRespository;
 
@@ -47,6 +50,12 @@ public class CourseServiceImpl implements CourseService {
 		}
 		return mapper.map(course, CourseDto.class);
 	
+	}
+
+	@Override
+	public List<Course> getByCat(Category category) {
+		System.out.println("in category");
+		return courseRepo.findByCategory(category);
 	}
 	
 	

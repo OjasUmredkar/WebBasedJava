@@ -28,7 +28,7 @@ public class GlobalException {
 	
 	@ExceptionHandler(CourseCustomException.class)
 	public ResponseEntity<?> handleCourseCustomException(CourseCustomException e){
-		return ResponseEntity.status(HttpStatus.NOT_FOUND)
+		return ResponseEntity.status(HttpStatus.BAD_REQUEST)
 				.body(new ApiResponse(e.getMessage()));
 	}
 	

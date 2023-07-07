@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.dto.CourseDto;
+import com.app.entities.Category;
 import com.app.services.CourseService;
 
 @RestController("/courses")
@@ -42,6 +43,11 @@ public class CourseController {
 	public ResponseEntity<?> getCourseByName(@PathVariable String courseName){
 		return ResponseEntity.status(HttpStatus.OK).body(courseServ.getCourse(courseName));
 		
+	}
+	
+	@GetMapping("/course/{category}")
+	public ResponseEntity<?> getCourseByCategory(@PathVariable String category){
+		return ResponseEntity.status(HttpStatus.OK).body(courseServ.getByCat( Category.valueOf(category)));
 	}
 	
 }
