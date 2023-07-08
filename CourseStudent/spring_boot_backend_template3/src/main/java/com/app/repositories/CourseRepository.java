@@ -6,6 +6,6 @@ import com.app.entities.Course;
 
 public interface CourseRepository extends JpaRepository<Course, Long> {
 
-	
+	Course findByTitle(String title);
 	
 }

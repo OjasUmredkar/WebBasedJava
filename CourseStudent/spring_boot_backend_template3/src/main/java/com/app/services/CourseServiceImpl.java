@@ -23,6 +23,15 @@ public class CourseServiceImpl implements CourseService {
 		return courseRepo.save(course);
 	}
 
+	@Override
+	public String updateFess(Long courseId, double fees) {
+		
+		Course course=courseRepo.findById(courseId).orElseThrow(()->new CourseCustomException("Course not found enter the valid id"));
+		course.setFees(fees);
+		courseRepo.save(course);
+		return "Course fees is updated";
+	}
+
 	
 	
 }

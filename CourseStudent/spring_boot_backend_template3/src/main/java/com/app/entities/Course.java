@@ -42,6 +42,11 @@ public class Course extends BaseEntity{
 	@JsonIgnore
 	List<Student> students=new ArrayList<Student>();
 	
+	public void addStudent(Student s) {
+		students.add(s);
+		s.setCourseTitle(this);
+		
+	}
 	
 	
 	

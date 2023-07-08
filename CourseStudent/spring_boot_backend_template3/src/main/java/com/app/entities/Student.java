@@ -7,6 +7,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,7 +32,7 @@ public class Student extends BaseEntity {
 	
 	@ManyToOne//(fetch = FetchType.LAZY)
 	@JoinColumn(name="course_id",nullable = false)
-	
+	//@JsonIgnore
 	private Course courseTitle;
 	@Column(nullable = false)
 	private int score;
