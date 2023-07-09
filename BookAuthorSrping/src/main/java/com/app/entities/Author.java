@@ -36,8 +36,8 @@ public class Author extends BaseEntity {
 	private String email;
 	@Column(length = 10,nullable = false)
 	private String password;
-//	@Transient
-//	private String confirmPassword;
+	@Transient
+	private String confirmPassword;
 	
 	
 	@OneToMany(cascade = CascadeType.ALL,

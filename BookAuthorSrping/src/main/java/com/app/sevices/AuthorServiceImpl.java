@@ -50,7 +50,7 @@ public class AuthorServiceImpl implements AuthorService {
 	}
 	@Override
 	public ApiResponse deleteAuthor(Long authorId) {
-		
+		 
 		if(!authorRepo.existsById(authorId)) {
 			throw new ResourceNotfoundException("Author does not exists");
 		}

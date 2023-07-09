@@ -1,5 +1,7 @@
 package com.app.controllers;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,18 +24,18 @@ public class AuthorController {
 	@Autowired
 	private AuthorService authorServ;
 	
-	@PostMapping
-	public ResponseEntity<?> addAuthor(@RequestBody AuthorDto authorDto) {
+	@PostMapping//
+	public ResponseEntity<?> addAuthor(@RequestBody @Valid AuthorDto authorDto) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(authorServ.addAuthor(authorDto));
 	}
 	
-	@GetMapping
+	@GetMapping//("/authors")
 	public ResponseEntity<?> getAllAuthors(){
 		return ResponseEntity.status(HttpStatus.OK).body(authorServ.getallAuthors());
 	}
 	
 	@PutMapping("/{authorId}")
-	public ResponseEntity<?> updateAuthor(@RequestBody AuthorDto authorDto){
+	public ResponseEntity<?> updateAuthor(@RequestBody @Valid AuthorDto authorDto){
 		return ResponseEntity.status(HttpStatus.OK).body(authorServ.updateAuthor(authorDto));
 	}
 	
