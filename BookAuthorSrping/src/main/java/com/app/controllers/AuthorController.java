@@ -22,12 +22,12 @@ public class AuthorController {
 	@Autowired
 	private AuthorService authorServ;
 	
-	@PostMapping//
+	@PostMapping
 	public ResponseEntity<?> addAuthor(@RequestBody AuthorDto authorDto) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(authorServ.addAuthor(authorDto));
 	}
 	
-	@GetMapping//("/authors")
+	@GetMapping
 	public ResponseEntity<?> getAllAuthors(){
 		return ResponseEntity.status(HttpStatus.OK).body(authorServ.getallAuthors());
 	}
